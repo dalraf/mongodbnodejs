@@ -4,8 +4,10 @@ web:
   command: sh -c 'npm install; npm install -g nodemon ; nodemon -e js,jade server.js'
   links:
     - mongo
+  depends_on:
+    - mongo
   ports:
-    - "8080"
+    - "8080:8080"
   volumes:
     - ./app:/usr/src/app
 mongo:
