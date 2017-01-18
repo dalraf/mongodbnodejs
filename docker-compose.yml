@@ -1,9 +1,11 @@
 web:
   image: node
+  command: node /usr/src/app/server.js
   links:
     - mongo
   ports:
-    - "9000"
-    - "8081"
+    - "8080"
+  volumes:
+    - ./app:/usr/src/app
 mongo:
   image: mongo
