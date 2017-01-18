@@ -1,6 +1,7 @@
 web:
   image: node
-  command: node /usr/src/app/server.js
+  working_dir: /usr/src/app
+  command: sh -c 'npm install; npm install -g nodemon ; nodemon -e js,jade server.js'
   links:
     - mongo
   ports:
